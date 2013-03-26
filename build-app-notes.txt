@@ -1,0 +1,16 @@
+rails new family_reunion_blog
+bundle install --binstubs
+
+./bin/rails g controller Welcome index contact_us
+./bin/rails g controller Personal::Info phone_numbers email_addresses aliases
+./bin/rake db:create
+
+mkdir db/migrate
+./bin/rake db:migrate db:migrate:status
+
+./bin/rails s
+./bin/rails s --port 3000
+
+open http://localhost:3000
+
+./bin/rake --tasks db
